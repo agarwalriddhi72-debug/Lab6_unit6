@@ -19,3 +19,21 @@ username: str = input("Please enter your username: ")
 
 #Give user 3 attempts
 attempts: int = 3
+
+#Check if username exists in dictionary
+if username in users:
+
+    while attempts > 0:
+        password: str = input("Please enter your password: ")
+
+        #Check if password matches
+        if password == users[username]:
+
+            #Assign security level
+            if username == "guest":
+                security_level: str = "Guest access"
+            else:
+                security_level: str = "Security Level 1"
+
+            print(f"Welcome, {username}. You have {security_level}.")
+            break
