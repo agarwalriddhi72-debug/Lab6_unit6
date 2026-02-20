@@ -37,3 +37,14 @@ if username in users:
 
             print(f"Welcome, {username}. You have {security_level}.")
             break
+
+#When password doesn't match
+        else:
+            attempts-=1
+            if attempts>0:
+                print("Access Denied.")
+            else:
+                print("Too many failed attempts. Account locked.")
+
+else:
+    print("Error: Username not found. Exiting.")
